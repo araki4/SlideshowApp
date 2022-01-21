@@ -17,61 +17,93 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bT-Wm-s8l">
-                                <rect key="frame" x="0.0" y="195" width="414" height="505"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="170" width="414" height="574"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="91v-Yg-JWa">
-                                        <rect key="frame" x="0.0" y="41" width="414" height="464"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="91v-Yg-JWa">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="574"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="91v-Yg-JWa" firstAttribute="bottom" secondItem="wPQ-Ja-xHA" secondAttribute="bottom" id="0T5-JO-H9l"/>
+                                    <constraint firstItem="91v-Yg-JWa" firstAttribute="top" secondItem="wPQ-Ja-xHA" secondAttribute="top" id="95T-qH-XGT"/>
+                                    <constraint firstItem="91v-Yg-JWa" firstAttribute="trailing" secondItem="wPQ-Ja-xHA" secondAttribute="trailing" id="Fak-wY-M92"/>
+                                    <constraint firstItem="91v-Yg-JWa" firstAttribute="leading" secondItem="wPQ-Ja-xHA" secondAttribute="leading" id="uy2-ba-Gsj"/>
+                                </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Ztw-2Z-U0a"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="wPQ-Ja-xHA"/>
                             </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MiV-kF-Ml1">
-                                <rect key="frame" x="0.0" y="170" width="414" height="505"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="170" width="414" height="574"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enG-GO-ski">
-                                        <rect key="frame" x="0.0" y="41" width="414" height="464"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="enG-GO-ski">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="574"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="enG-GO-ski" firstAttribute="leading" secondItem="Mph-6o-1Dg" secondAttribute="leading" id="FIu-hX-upV"/>
+                                    <constraint firstItem="enG-GO-ski" firstAttribute="bottom" secondItem="Mph-6o-1Dg" secondAttribute="bottom" id="fX9-eU-oO9"/>
+                                    <constraint firstItem="enG-GO-ski" firstAttribute="top" secondItem="Mph-6o-1Dg" secondAttribute="top" id="kSe-rv-RBF"/>
+                                    <constraint firstItem="enG-GO-ski" firstAttribute="trailing" secondItem="Mph-6o-1Dg" secondAttribute="trailing" id="r8Q-Pd-q7X"/>
+                                </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="H25-zG-Zj3"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Mph-6o-1Dg"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYt-Nt-bGv">
-                                <rect key="frame" x="28" y="727" width="31" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="119" translatesAutoresizingMaskIntoConstraints="NO" id="dtt-dU-GPa">
+                                <rect key="frame" x="41.5" y="782" width="331" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYt-Nt-bGv">
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="進む"/>
+                                        <connections>
+                                            <action selector="nextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gMk-rF-5Zc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCt-JW-yBy">
+                                        <rect key="frame" x="150" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="再生"/>
+                                        <connections>
+                                            <action selector="playStopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="13F-Ef-OcU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lc4-JZ-Kqc">
+                                        <rect key="frame" x="300" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="戻る"/>
+                                        <connections>
+                                            <action selector="backButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pfS-T0-9wl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ab9-eB-fpJ">
+                                <rect key="frame" x="135" y="34" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="次へ"/>
-                                <connections>
-                                    <action selector="testButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hZc-O5-7X6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lc4-JZ-Kqc">
-                                <rect key="frame" x="353" y="727" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <action selector="testButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vhU-4l-Knx"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dtt-dU-GPa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="68s-AX-mci"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dtt-dU-GPa" secondAttribute="bottom" constant="50" id="yTT-6n-PoT"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButtonOutlet" destination="Lc4-JZ-Kqc" id="j8N-7b-qhS"/>
                         <outlet property="dummyImageView" destination="91v-Yg-JWa" id="0m6-66-KuP"/>
                         <outlet property="dummyScrollView" destination="8bT-Wm-s8l" id="es1-Lq-c7o"/>
                         <outlet property="imageView" destination="enG-GO-ski" id="v0b-eR-une"/>
+                        <outlet property="nextButtonOutlet" destination="eYt-Nt-bGv" id="V9w-PQ-NdX"/>
+                        <outlet property="playStopButtonOutlet" destination="CCt-JW-yBy" id="DcK-FT-UuG"/>
                         <outlet property="scrollView" destination="MiV-kF-Ml1" id="MNO-aJ-UTn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="75.669642857142847"/>
+            <point key="canvasLocation" x="18.399999999999999" y="75.369458128078819"/>
         </scene>
     </scenes>
     <resources>
