@@ -86,6 +86,9 @@ class ViewController: UIViewController {
         self.dummyScrollView.transform = CGAffineTransform(translationX: -(self.translationX), y: 0)
         self.dummyImageView.image = UIImage.init(named: self.imageList[self.imageIndex])
 
+        // スライド中のボタン操作を無効にする
+        self.nextButtonOutlet.isEnabled = false
+        self.backButtonOutlet.isEnabled = false
         
         //　スライドアニメーション
         UIView.animate(withDuration: 1, animations: {
@@ -98,6 +101,12 @@ class ViewController: UIViewController {
             // スライド成功時に、次の画像の表示と表示位置を調整
             self.imageView.image = UIImage.init(named: self.imageList[self.imageIndex])
             self.scrollView.transform =  CGAffineTransform(translationX: 0, y: 0)
+            
+            // ボタン操作を有効にする
+            if self.autoSlideTimer == nil {
+                self.nextButtonOutlet.isEnabled = true
+                self.backButtonOutlet.isEnabled = true
+            }
         })
     }
     
