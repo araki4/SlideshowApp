@@ -10,10 +10,16 @@ import UIKit
 class ViewController: UIViewController {
     
     // 画像表示用のIBOutlet
-    @IBOutlet weak var imageArea: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
+    // ダミー用のIBOutlet
+    @IBOutlet weak var dummyImageView: UIImageView!
     
     // スライド用のIBOutlet
     @IBOutlet weak var scrollView: UIScrollView!
+    // ダミー用のスライド用のIBOutlet
+    @IBOutlet weak var dummyScrollView: UIScrollView!
+    
+    
     
     // 仮置きの進むボタン
     @IBAction func testButton(_ sender: Any) {
@@ -47,15 +53,24 @@ class ViewController: UIViewController {
             translationX = -(self.scrollView.frame.size.width)
             imageIndex = imageIndex == imageList.endIndex - 1 ? 0 : imageIndex + 1
         }
+
+        self.dummyScrollView.transform = CGAffineTransform(translationX: -(self.translationX), y: 0)
+        // スライド成功時に、次の画像の表示と表示位置を調整
+        self.dummyImageView.image = UIImage.init(named: self.imageList[self.imageIndex])
+
         
         //　スライドアニメーション
         UIView.animate(withDuration: 1, animations: {
             //　スライドの実行
             self.scrollView.transform = CGAffineTransform(translationX: self.translationX, y: 0)
+            //　スライドの実行
+            self.dummyScrollView.transform = CGAffineTransform(translationX: 0, y: 0)
+            
         }, completion: {finished in
             // スライド成功時に、次の画像の表示と表示位置を調整
-            self.imageArea.image = UIImage.init(named: self.imageList[self.imageIndex])
+            self.imageView.image = UIImage.init(named: self.imageList[self.imageIndex])
             self.scrollView.transform =  CGAffineTransform(translationX: 0, y: 0)
+            // UIView.animate(withDuration: 1, animations: {self.scrollView.transform =  CGAffineTransform(translationX: 0, y: 0)})
         })
     }
     
@@ -65,7 +80,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // 初期画像の読み込み
-        imageArea.image = UIImage.init(named: "image1")
+        imageView.image = UIImage.init(named: "image1")
         
     }
 
