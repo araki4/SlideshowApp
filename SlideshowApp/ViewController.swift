@@ -40,15 +40,18 @@ class ViewController: UIViewController {
     
     // 再生・停止ボタンのIBAction
     @IBAction func playStopButton(_ sender: Any) {
-        // 動作中のタイマーを1つに保つために、 timer が存在しない場合だけ、タイマーを生成して動作させる
+        // 自動スライドのためのタイマー生成処理
         if self.autoSlideTimer == nil {
             self.autoSlideTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(autoSlideImage(_:)), userInfo: nil, repeats: true)
+            // ボタン名変更、無効処理
             self.playStopButtonOutlet.setTitle("停止", for: .normal)
             self.nextButtonOutlet.isEnabled = false
             self.backButtonOutlet.isEnabled = false
         }else {
+            // 自動スライドのためのタイマー停止処理
             self.autoSlideTimer!.invalidate()
             self.autoSlideTimer = nil
+            // ボタン名変更、有効処理
             self.playStopButtonOutlet.setTitle("再生", for: .normal)
             self.nextButtonOutlet.isEnabled = true
             self.backButtonOutlet.isEnabled = true
@@ -98,7 +101,7 @@ class ViewController: UIViewController {
         })
     }
     
-    //
+    // タイマー呼び出し用（画像スライドメソッドをラップ）
     @objc func autoSlideImage(_ timer: Timer){
         slideImage(direction: "right")
     }
@@ -110,6 +113,37 @@ class ViewController: UIViewController {
         // 初期画像の読み込み
         imageView.image = UIImage.init(named: "image1")
         
+    }
+    
+    // 自動スライド状態記憶用
+    var isAuto: Bool = false
+    
+    // 画面遷移時の処理
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if self.autoSlideTimer != nil {
+            // 自動スライドの停止処理
+            self.playStopButton(playStopButtonOutlet as Any)
+            
+            // スライド状態の保管
+            isAuto = true
+        }
+        
+        // 遷移先のImageViewControllerを取得する
+        let imageViewController:ImageViewController = segue.destination as! ImageViewController
+        
+        // 遷移先に画像名リストと現在表示中の画像インデックスを受け渡し
+        imageViewController.imageIndex = self.imageIndex
+        imageViewController.imageList = self.imageList
+    }
+    
+    // 画面遷移先から戻ってきた場合の処理
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        // 自動スライド状態だった場合の復帰処理
+        if isAuto {
+            self.playStopButton(playStopButtonOutlet as Any)
+            isAuto = false
+        }
     }
 
 
